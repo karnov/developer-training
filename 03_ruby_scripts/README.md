@@ -34,7 +34,20 @@ and giving execution rights (`+x`) to the owner (`u`) of the file
 $ chmod u+x executable-script.rb
 ```
 
-Now run it with
+Confirm that it has become executable (`x`)
+
+```bash
+$ ls -la 03_ruby_scripts 
+total 32
+drwxr-xr-x  6 u0157312  KARNOVGROUP\Domain Users  192 15 Aug 15:04 .
+drwxr-xr-x  8 u0157312  KARNOVGROUP\Domain Users  256 15 Aug 15:34 ..
+-rw-r--r--  1 u0157312  KARNOVGROUP\Domain Users  915 15 Aug 15:03 README.md
+-rwxr-xr-x  1 u0157312  KARNOVGROUP\Domain Users   39 15 Aug 15:04 executable-script
+-rw-r--r--  1 u0157312  KARNOVGROUP\Domain Users   39 15 Aug 15:04 executable-script.rb
+-rw-r--r--  1 u0157312  KARNOVGROUP\Domain Users   18 15 Aug 14:39 script.rb
+```
+
+Now run it
 
 ```bash
 $ ./executable-script.rb
