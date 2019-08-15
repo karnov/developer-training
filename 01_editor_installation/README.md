@@ -8,11 +8,12 @@ I recommend [Atom](https://atom.io/) or the very similar [Visual Studio Code](ht
 
 Install an editor
 
-Create a new folder for all your software projects, e.g. `src`
+Create a new folder for all your software projects, e.g. a folder called `src` in your users home folder
 
 ```bash
 $ mkdir ~/src
 ```
 
-Create a new 
+Create a new software project there
+
 
