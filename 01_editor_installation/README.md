@@ -11,9 +11,28 @@ Install an editor
 Create a new folder for all your software projects, e.g. a folder called `src` in your users home folder
 
 ```bash
-$ mkdir ~/src
+$ cd ~
+$ mkdir src
 ```
 
-Create a new software project there
+Jump into that folder and create a new software project there
+
+```bash
+$ cd ~/src
+$ mkdir first-project
+```
+
+Launch your editor here
 
 
+- Atom:
+
+```bash
+$ atom .
+```
+
+- VS Code:
+
+```bash
+$ code .
+```
