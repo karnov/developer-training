@@ -41,6 +41,56 @@ letters[3]
 => nil
 ```
 
+## Ranges
+
+Say I would like an array of all letters from 'a' to 'z' - that would be quite verbose. `Range`s are to the rescue:
+
+```ruby
+Range.new('a', 'e').to_a
+=> ['a', 'b', 'c', 'd', 'e']
+```
+
+or equivalently
+
+```ruby
+['a'..'e'].to_a
+=> ['a', 'b', 'c', 'd', 'e']
+```
+
+and 
+
+```ruby
+['a'...'f'].to_a
+=> ['a', 'b', 'c', 'd', 'e']
+```
+
+(notice the extra `.` before the `'f'`)
+
+### Slicing arrays with ranges
+
+```ruby
+letters = [:a,:b,:c,:d,:e]
+letters[1..3]
+=> [:b, :c, :d]
+```
+
+### Ranges can also simplify case statement logic
+
+```ruby
+year = 1992
+
+case year
+  when 1970..1979 then "Rock"
+  when 1980..1990 then "Punk"
+  when 1991..2000 then "Grunge"
+  when 2000..2013 then "Metal"
+end
+
+=> "Grunge"
+```
+
+## More about arrays
+
 ### Adding and removing elements
 
 ```ruby
@@ -97,6 +147,11 @@ You can get the unique entries
 
 but perhaps what you are looking for is a `Set` or `SortedSet`
 
+
+## Sets
+
+### Creation
+
 ```ruby
 require 'set'
 
@@ -152,7 +207,7 @@ colors = {
 => {:red=>16711680, :blue=>255}
 ```
 
-### Adding/fetching new entries
+### Fetching/storing new entries
 
 ```ruby
 colors = {
@@ -161,6 +216,7 @@ colors = {
 }
 
 colors[:red]
+=> 0xff0000
 ```
 
 Notice, if you try to access a hash key with no value, it will return nil. 
@@ -174,8 +230,8 @@ Use `.fetch()` in case you wan't to throw an error or return a default value, wh
 
 ```ruby
 colors = {
-  'red'  => 0xff0000,
-  'blue' => 0x0000ff
+  red: 0xff0000,
+  blue: 0x0000ff
 }
 
 colors.fetch(:green)
@@ -184,3 +240,21 @@ colors.fetch(:green)
 colors.fetch(:green, 0xffffff)
 => 0xffffff
 ```
+
+And storing a value for :grey is
+
+```ruby
+colors[:grey] = 0xcccccc
+
+colors
+=> {:red=>16711680, :blue=>255, :grey=>13421772}
+```
+
+If you wan't all the keys in a hash
+
+```ruby
+colors.keys
+=> [:red, :blue, :grey]
+```
+
+Experiment yourself with `.values` too
