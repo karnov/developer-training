@@ -35,6 +35,27 @@ text
 => "he is over there"
 ```
 
+## String interpolation
+
+Interpolation is a powerful technique. It allows you to "templatize" a string, e.g.
+
+```ruby
+name = "Björn Borg"
+nationality = "swedish"
+
+"#{name} was a #{nationality} tennis player"
+=> "Björn Borg was a swedish tennis player"
+```
+
+## String formating
+
+In case you wan't to format numbers, e.g. the number of trailing digits after  
+
+```
+month_name = "June"
+avg = 25.543
+"The average temperature in %s was %0.1f C" % [month_name, avg]
+
 ## String encoding
 
 Strings are UTF-8 by default, but other encodings are well supported
