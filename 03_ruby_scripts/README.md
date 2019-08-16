@@ -1,10 +1,10 @@
 # Ruby scripts
 
-Ruby is an [interpreted](https://en.wikipedia.org/wiki/Interpreted_language) language
 
-## Exercise
 
-Make a file `script.rb` containing
+## Exercise - a ruby script file
+
+Make a new project `~/src/`, launch yo file `script.rb` containing
 
 ```ruby
 puts "Hello world"
@@ -39,12 +39,12 @@ Confirm that it has become executable (`x`)
 ```bash
 $ ls -la 03_ruby_scripts 
 total 32
-drwxr-xr-x  6 u0157312  KARNOVGROUP\Domain Users  192 15 Aug 15:04 .
-drwxr-xr-x  8 u0157312  KARNOVGROUP\Domain Users  256 15 Aug 15:34 ..
--rw-r--r--  1 u0157312  KARNOVGROUP\Domain Users  915 15 Aug 15:03 README.md
--rwxr-xr-x  1 u0157312  KARNOVGROUP\Domain Users   39 15 Aug 15:04 executable-script
--rw-r--r--  1 u0157312  KARNOVGROUP\Domain Users   39 15 Aug 15:04 executable-script.rb
--rw-r--r--  1 u0157312  KARNOVGROUP\Domain Users   18 15 Aug 14:39 script.rb
+drwxr-xr-x  6 (...)  192 15 Aug 15:04 .
+drwxr-xr-x  8 (...)  256 15 Aug 15:34 ..
+-rw-r--r--  1 (...)  915 15 Aug 15:03 README.md
+-rwxr-xr-x  1 (...)   39 15 Aug 15:04 executable-script
+-rw-r--r--  1 (...)   39 15 Aug 15:04 executable-script.rb
+-rw-r--r--  1 (...)   18 15 Aug 14:39 script.rb
 ```
 
 Now run it
