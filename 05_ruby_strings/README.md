@@ -47,7 +47,8 @@ beer.bytes
 => [195, 184, 108]
 
 latin_beer = "øl".encode("iso8859-1")
-latin_beer.encoding                                      # => #<Encoding:ISO-8859-1>
+latin_beer.encoding
+=> #<Encoding:ISO-8859-1>
 latin_beer.bytes
 => [248, 108]
 ```
@@ -56,7 +57,7 @@ Changing encoding to e.g. `ASCII` is easy
 
 ```ruby
 "Napoléon".encode("ascii")
-Encoding::UndefinedConversionError: U+00E9 from UTF-8 to US-ASCII
+=> Encoding::UndefinedConversionError: U+00E9 from UTF-8 to US-ASCII
 ```
 
 ... but you of course need to do something about the Unicode codepoints that aren't part of the `ASCII` character set.
@@ -66,6 +67,7 @@ fallback = {
   "é" => "&eacute;"
 }
 "Napoléon".encode("ascii", fallback: fallback)
+=> "Napol&eacute;on"
 ```
 
 Most string functions are utf-8 compatible,
