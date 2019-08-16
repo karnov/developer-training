@@ -2,7 +2,7 @@
 
 
 
-## Exercise - a ruby script file
+## Exercise - a script file
 
 Make a new project `~/src/`, launch yo file `script.rb` containing
 

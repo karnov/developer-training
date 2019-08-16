@@ -1,8 +1,6 @@
-# Strings and collections
+# Strings
 
-## Strings - exercises
-
-### can be created in many ways
+### Creating strings
 
 ```ruby
 single_line = "Hälsingegatan 43, 113 82 Stockholm"
@@ -28,7 +26,7 @@ XML
 puts heredoc
 ```
 
-### (unfortunately) strings are mutable
+## Strings are (unfortunately) mutable
 
 ```ruby
 text = "here"
@@ -37,7 +35,7 @@ text
 => "he is over there"
 ```
 
-### String encoding
+## String encoding
 
 Strings are UTF-8 by default, but other encodings are well supported
 
