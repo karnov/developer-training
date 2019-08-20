@@ -49,12 +49,14 @@ nationality = "swedish"
 
 ## String formating
 
-In case you wan't to format numbers, e.g. the number of trailing digits after  
+In case you wan't to format numbers, dates etc. when printing it, you can use `String.format` (or `%` ), which has the same behaviour as `printf` in many other languages
 
-```
+```ruby
 month_name = "June"
 avg = 25.543
 "The average temperature in %s was %0.1f C" % [month_name, avg]
+=> "The average temperature in June was 25.54"
+```
 
 ## String encoding
 
