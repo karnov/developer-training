@@ -10,14 +10,19 @@
 7. [Collections](07_ruby_collections)
 8. [Methods](08_ruby_methods)
 9. [Classes](09_ruby_classes)
-10. [Enumerable methods](10_enumerable_methods)
-11. [
-
-7. [Structs and Classes]
+10. [Inheritance and composition](10_ruby_inheritance_and_composition)
+11. [Enumerable methods](11_enumerable_methods)
 
 Rubocop and styling
 
 Testing
 
+Logging
 
+Web services
 
+XML
+
+Database access
+
+etc.
