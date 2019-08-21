@@ -117,7 +117,7 @@ So rubocop helped us fix 3 of 4 offenses - I like it!
 
 For that reason, it is quite useful to have Rubocop autocorrection available wihtin your editor.
 
-### Configuring rubocop
+### Customizing rubocop for your project
 
 Rubocop comes with default settings, that are useful and meaningful, such as `Metrics/LineLength` which will ask you to make your code lines only 80 characters.
 
@@ -128,7 +128,9 @@ Metrics/LineLength:
   Max: 100
 ```
 
-As we saw before, Rubocop can 
+As we saw before, rubocop (`-a`) auto-corrections can save you a lot of time, styling your code.
+
+Say we want our `Hash` objects rendered in `table` style, we should add the below to `.rubocop.yml`
 
 ```
 Layout/AlignHash:
@@ -137,5 +139,4 @@ Layout/AlignHash:
   EnforcedColonStyle: table
 ```
 
-In the same way `Metrics/LineLength` will 
-
+and run `rubocop -a` again on your file
