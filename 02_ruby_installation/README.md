@@ -1,4 +1,4 @@
-# Ruby, RVM, Gemsets and Bundler/Gemfiles
+# Ruby installation and versions management
 
 ## Ruby and RVM
  
