@@ -3,7 +3,7 @@ puts single_line
 
 multiple_lines = "Hälsingegatan 43,"\
   "113 82 Stockholm"
-puts single_line
+puts multiple_lines
 
 string_literals = %q(
   Hälsingegatan 43,
