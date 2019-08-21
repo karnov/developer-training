@@ -17,7 +17,7 @@ Ruby `Struct`s are quite good for carrying data around.
 ```ruby
 BankAccount = Struct.new(:balance, :firstname, :lastname, :cpr)
 
-account = BankAccount.new(200, "John", "Best", "12081967-1234")
+account = BankAccount.new(200, "John", "Best", "811228-9874")
 
 puts account.balance
 => 200
@@ -46,7 +46,7 @@ puts account.balance
 => 1000000000
 
 puts account.cpr
-=> "12081967-1234"
+=> "811228-9874"
 ```
 
 Perhaps not.
@@ -56,10 +56,10 @@ All these requirements make the `BankAccount` type a good candidate for a `class
 ```ruby
 class Person
   def initialize(
-      cpr_number: cpr_number, 
+      personal_identity_number: personal_identity_number, 
       firstname: firstname, 
       lastname: lastname)
-    @cpr_number = cpr_number
+    @personal_identity_number = personal_identity_number
     @firstname = firstname
     @lastname = lastname
   end
@@ -81,7 +81,7 @@ class BankAccount
 end
 
 owner = Person.new \
-  cpr_number: "12081967-1234",
+  personal_identity_number: "811228-9874",
   firstname: "John",
   lastname: "Best"
 
@@ -142,8 +142,8 @@ Note also, that when we make have `attr_reader :firstname, :lastname` in `Person
 class Person
   attr_reader :firstname, :lastname
 
-  def initialize(cpr_number, firstname, lastname)
-    @cpr_number = cpr_number
+  def initialize(personal_identity_number:, firstname:, lastname:)
+    @personal_identity_number = personal_identity_number
     @firstname = firstname
     @lastname = lastname
   end
@@ -154,7 +154,7 @@ class Person
 end
 
 owner = Person.new \
-  cpr_number: "12081967-1234",
+  personal_identity_number: "811228-9874",
   firstname: "John",
   lastname: "Best"
 
@@ -173,12 +173,12 @@ puts account.owner.full_name
 
 ## Exercise
 
-Add a `birthday` method to `Person`, that returns a Ruby `Date` object with the account owners birthday date calculated from the `@cpr`-number.
+Add a `birthday` method to `Person`, that returns a Ruby `Date` object with the account owners birthday date calculated from the `@cpr`-number. You may want to use some code from an earlier exercise.
 
-Hint: 
+## Exercise
 
-```ruby
-require 'date'
-date = Date.strptime("1972-08-31", "%Y-%m-%d")
-puts date.day
-=> 31
+Try restructure the code so that a `Person` can have multiple `BankAccount`s, say a budget account and a saving account.
+
+## Exercise
+
+Enhance it so that a `Person` can transfer money from one `BankAccount` to another. Perhaps also another persons account.
