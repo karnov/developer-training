@@ -16,8 +16,7 @@
 13. [Bundler](13_ruby_bundler)
 14. [Creating a gem](14_ruby_creating_a_gem)
 15. [Unit testing](15_ruby_unit_testing)
-16. [Coding style](16_ruby_rubocop)
-Rubocop and styling
+16. [Rubocop and coding style](16_ruby_rubocop)
 
 Testing
 

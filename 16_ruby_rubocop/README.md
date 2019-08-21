@@ -29,10 +29,6 @@ etc.
 
 ## Rubocop
 
-
-
-### 1\. Code style checker
-
 Running `rubocop` with no arguments will check all Ruby source files in the current directory:
 
 ```bash
@@ -140,3 +136,28 @@ Layout/AlignHash:
 ```
 
 and run `rubocop -a` again on your file
+
+### Pragmatic use of rubocop
+
+If only a few file in your project, fails have long lines, i.e. `Metrics/LineLength` offenses, then there's no point allowing other files to be harmed by a loose `Metrics/LineLength` setting.
+
+In such case you should exclude the given file from `Metrics/LineLength`, i.e.
+
+```
+Metrics/LineLength:
+  Exclude:
+    - 'path/to/file_with_long_lines.rb'
+```
+
+If there's an issue in a few lines, you can even deactivate rubocop for those
+
+```ruby
+letters = %w[a b]
+
+# rubocop:disable Metrics/LineLength
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]
+# rubocop:enable Metrics/LineLength
+
+puts letters
+puts numbers
+```
