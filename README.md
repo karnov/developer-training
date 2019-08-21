@@ -12,7 +12,11 @@
 9. [Classes](09_ruby_classes)
 10. [Inheritance and composition](10_ruby_inheritance_and_composition)
 11. [Enumerable methods](11_enumerable_methods)
-
+12. [Gems](12_ruby_gems)
+13. [Bundler](13_ruby_bundler)
+14. [Creating a gem](14_ruby_creating_a_gem)
+15. [Unit testing](15_ruby_unit_testing)
+16. [Coding style](16_ruby_rubocop)
 Rubocop and styling
 
 Testing
