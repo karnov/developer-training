@@ -88,9 +88,54 @@ end
 
 ### Auto-correcting offenses
 
-You can also run RuboCop in an auto-correct mode (`-a`), where it will try to automatically fix the problems it found in your code. Try it on the file you created before
+You can also run rubocop in an auto-correct mode (`-a`), where it will try to automatically fix the problems it found in your code. Try it on the file you created before
 
-```bash
-$ rubocop -a bad_style.rb
 ```
+$ rubocop -a bad_style.rb
+Inspecting 1 file
+C
+
+Offenses:
+
+bad_style.rb:1:1: C: [Corrected] Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+def badName
+^
+bad_style.rb:2:3: C: [Corrected] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+  if something
+  ^^
+bad_style.rb:3:5: C: Naming/MethodName: Use snake_case for method names.
+def badName
+    ^^^^^^^
+bad_style.rb:5:4: C: [Corrected] Layout/TrailingBlankLines: Final newline missing.
+end
+   
+
+1 file inspected, 4 offenses detected, 3 offenses corrected
+```
+
+So rubocop helped us fix 3 of 4 offenses - I like it!
+
+For that reason, it is quite useful to have Rubocop autocorrection available wihtin your editor.
+
+### Configuring rubocop
+
+Rubocop comes with default settings, that are useful and meaningful, such as `Metrics/LineLength` which will ask you to make your code lines only 80 characters.
+
+But in some projects you may struggle with that limitation. In such case you can make rubocop accept lines beyond 100 characters, using a `.rubocop.yml` file in the root of the software project.
+
+```
+Metrics/LineLength:
+  Max: 100
+```
+
+As we saw before, Rubocop can 
+
+```
+Layout/AlignHash:
+  Enabled: true
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+```
+
+In the same way `Metrics/LineLength` will 
 

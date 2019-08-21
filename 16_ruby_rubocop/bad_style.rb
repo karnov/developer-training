@@ -1,5 +1,5 @@
+# frozen_string_literal: true
+
 def badName
-  if something
-    test
-    end
+  test if something
 end
