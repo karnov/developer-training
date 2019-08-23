@@ -1,7 +1,7 @@
 class Person
   attr_reader :firstname, :lastname
 
-  def initialize(personal_identity_number, firstname, lastname)
+  def initialize(personal_identity_number:, firstname:, lastname:)
     @personal_identity_number = personal_identity_number
     @firstname = firstname
     @lastname = lastname

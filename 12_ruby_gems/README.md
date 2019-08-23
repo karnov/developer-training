@@ -6,4 +6,4 @@ Try
 ```bash
 $ gem install rubocop
 ```
-
+>
