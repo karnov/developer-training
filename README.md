@@ -10,13 +10,14 @@
 7. [Collections](07_ruby_collections)
 8. [Methods](08_ruby_methods)
 9. [Classes](09_ruby_classes)
-10. [Modules and inheritance](10_ruby_modules_and_inheritance)
-11. [Enumerable methods](11_enumerable_methods)
-12. [Gems](12_ruby_gems)
-13. [Bundler](13_ruby_bundler)
-14. [Creating a gem](14_ruby_creating_a_gem)
-15. [Unit testing](15_ruby_unit_testing)
+10. [Modules](10_ruby_modules)
+11. [Inheritance](11_ruby_inheritance)
+12. [Enumerable methods](12_enumerable_methods)
+13. [Gems](13_ruby_gems)
+14. [Bundler](14_ruby_bundler)
+15. [Creating a gem](15_ruby_creating_a_gem)
 16. [Rubocop and coding style](16_ruby_rubocop)
+17. [Unit testing](17_ruby_unit_testing)
 
 Logging
 
