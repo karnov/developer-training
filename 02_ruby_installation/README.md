@@ -28,6 +28,14 @@ $ rvm list
   #  * - default
 ```
 
+### Install a given ruby
+
+Let's install ruby-2.4.2
+
+```bash
+rvm install ruby-2.4.2
+```
+
 ### Pick the right ruby version in a project
 
 Create a file named `.ruby-version` to the root of your project folder
@@ -36,16 +44,16 @@ Create a file named `.ruby-version` to the root of your project folder
 $ echo "ruby-2.4.2" > .ruby-version
 ```
 
-When you (re-)enter that folder RVM will choose the ruby 2.4.2
+When you (re-)enter that folder RVM will choose the ruby 2.4.2 if installed or otherwise ask you to install it
 
 ```bash
 $ cd .
 $ rvm current
-  ruby-2.6.3
+  ruby-2.4.2
 ```
 
 ```bash
 $ ruby -v
-  ruby 2.6.3p62 (2019-04-16 revision 67580) ...
+  ruby 2.4.2 ...
 ```
 
