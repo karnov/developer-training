@@ -41,6 +41,10 @@ letters[3]
 => nil
 ```
 
+### Exercise - joining an array into a string
+
+Join the `%w{A list of words}` into a sentence i.e. with `" "` as seperator, using `.join`
+
 ## Ranges
 
 Say I would like an array of all letters from 'a' to 'z' - that would be quite verbose. `Range`s are to the rescue:
@@ -57,7 +61,7 @@ or equivalently
 => ['a', 'b', 'c', 'd', 'e']
 ```
 
-and 
+and
 
 ```ruby
 ['a'...'f'].to_a
@@ -94,7 +98,7 @@ end
 ### Adding and removing elements
 
 ```ruby
-[1,2,3] << "a" 
+[1,2,3] << "a"
 => [1,2,3,"a"]
 
 [1,2,3].push("a")
@@ -219,7 +223,7 @@ colors[:red]
 => 0xff0000
 ```
 
-Notice, if you try to access a hash key with no value, it will return nil. 
+Notice, if you try to access a hash key with no value, it will return nil.
 
 ```ruby
 colors[:green]
