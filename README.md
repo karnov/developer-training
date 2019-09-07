@@ -12,20 +12,20 @@
 9. [Classes](09_ruby_classes)
 10. [Modules](10_ruby_modules)
 11. [Inheritance](11_ruby_inheritance)
-12. [Enumerable methods](12_enumerable_methods)
+12. [Enumerable methods](12_enumerable_methods) # TODO
 13. [Gems](13_ruby_gems)
-14. [Bundler](14_ruby_bundler)
-15. [Creating a gem](15_ruby_creating_a_gem)
+14. [Bundler](14_ruby_bundler) # TODO
+15. [Creating a gem](15_ruby_creating_a_gem) # TODO
 16. [Rubocop and coding style](16_ruby_rubocop)
-17. [Unit testing](17_ruby_unit_testing)
+17. [Unit testing](17_ruby_unit_testing) # TODO
 
-Logging
+Logging # TODO
 
-Web services
+Web services # TODO
 
-XML
+XML # TODO
 
-Database access
+Database access # TODO
 
 etc.
 
