@@ -378,8 +378,8 @@ Factorial
 
 Try to cover the `Person` class with Rspec tests.
 
-## Exercise (advanced!)
+## Exercise (advanced)
 
 Create tests for the `BankAccount` class.
 
-Tip: In order to test the `BankAccount` properly, you have to mock the `Person` class. Read more on [test doubles](https://www.rubyguides.com/2018/10/rspec-mocks/).
+Tip: In order to test the `BankAccount` properly, you have to mock the `Person` class. But that's another topic, that we will not go through here. Read more on [test doubles](https://www.rubyguides.com/2018/10/rspec-mocks/).
