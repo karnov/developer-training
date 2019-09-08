@@ -14,7 +14,7 @@ potus_regex.match("John Best")
 
 Instead of `/.../i` you can use `%r{...}i`, ie. `%r{(?:Trump|Obama|Bush|Clinton)}i`
 
-## Captures
+## Capture groups
 
 Often regular expressions are used to extract parts of a string, marking them with a caputure group `(...)`, such as
 
@@ -29,7 +29,7 @@ txt
 phone = contact[CONTACT_REGEX, 2]
 ```
 
-## Named caputures
+## Named caputure groups
 
 But named captures makes it easier to read
 
@@ -77,7 +77,7 @@ Regular expressions are often used with string substituion.
 "Mary had a little lamb".sub(/little (?:lamb|cow)/, "iPad")
 ```
 
-## Fidling with regular expressions 
+## Fidling with regular expressions
 
 You may find [rubular.com/](https://rubular.com/) a useful tool when fiddling around with regular expressions in Ruby
 

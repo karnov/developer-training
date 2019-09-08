@@ -17,7 +17,7 @@
 14. [Bundler](14_ruby_bundler) # TODO
 15. [Creating a gem](15_ruby_creating_a_gem) # TODO
 16. [Rubocop and coding style](16_ruby_rubocop)
-17. [Unit testing](17_ruby_unit_testing) # TODO
+17. [Unit testing](17_ruby_unit_testing)
 
 Logging # TODO
 
