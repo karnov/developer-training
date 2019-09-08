@@ -4,21 +4,21 @@
 
 Here’s why:
 
-### It builds a safety net against errors (especially useful for refactoring)
+**It builds a safety net against errors (especially useful for refactoring)**
 
 If you don’t have a test suite then you don’t want to touch your code, because of the fear of something breaking…
 
 …having tests increases your confidence!
 
-### It helps document your code
+**It helps document your code**
 
 Your tests describe what your application should be doing.
 
-### It gives you a feedback loop
+**It gives you a feedback loop**
 
 When you are doing test driven development ([TDD[(https://en.wikipedia.org/wiki/Test-driven_development)]) **you get a feedback loop** that tells you what to focus on next, useful if you get distracted easily.
 
-### It helps you make sure your code is producing the results you expect
+**It helps you make sure your code is producing the results you expect**
 
 This one is important!
 
@@ -26,7 +26,7 @@ If you are writing some complex logic, then **you want to make sure it’s worki
 
 Tests can help you uncover corner cases and **document them**.
 
-## Testdriven development in RSpec
+## Test driven development in RSpec
 
 In Karnov, RSpec is the preferred testing framework, so that will be the topic of this lesson on unit testing.
 
@@ -214,7 +214,7 @@ The next task is to implement the method
 ```ruby
 class Factorial
   def factorial_of(n)
-    (1..n).inject(:*)
+    (1..n).reduce(:*)
   end
 end
 ```
