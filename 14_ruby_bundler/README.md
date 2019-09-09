@@ -62,7 +62,6 @@ Bundler makes sure that Ruby can find all of the gems in the `Gemfile` (and all 
 For your application (such as a Sinatra application), you will need to set up bundler before trying to require any gems. At the top of the first file that your application loads (for Sinatra, the file that calls `require 'sinatra'`), put the following code:
 
 ```ruby
-require 'rubygems'
 require 'bundler/setup'
 ```
 
@@ -73,7 +72,6 @@ Now that your code is available to Ruby, you can require the gems that you need.
 If you have a lot of dependencies, you might want to say "require all of the gems in my `Gemfile`". To do this, put the following code immediately following `require 'bundler/setup'`:
 
 ```ruby
-require 'rubygems'
 require 'bundler/setup'
 Bundler.require(:default)
 ```
