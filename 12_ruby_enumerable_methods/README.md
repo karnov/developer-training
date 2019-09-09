@@ -1,4 +1,4 @@
-# Map, Select, and Other Enumerable methods
+# Enumerable methods
 
 Earlier we learned about `Array` and `Hash` but only got half the story... they each have their own methods for adding and deleting and accessing data and they both implement their own version of the `#each` method to iterate over their items but what makes them really powerful in Ruby is the ability to use Enumerable methods as well as the basic ones you've just learned.
 
