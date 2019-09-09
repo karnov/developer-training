@@ -2,7 +2,7 @@
 
 Sharing and using others is amazingly easy, since there's a built-in package manager distributed with Ruby. Rubygems provides a standard format for distributing Ruby programs and libraries in a self-contained format called a "gem".
 
-The interface for RubyGems is a command-line tool called `gem` which can install and manage libraries (the gems). RubyGems integrates with Ruby run-time loader to help find and load installed gems from standardized library folders. Though it is possible to use a private RubyGems repository, the public repository [rubygems.org](https://rubygems.org/) is most commonly used for gem management.
+The interface for RubyGems is a command-line tool called `gem` which can install and manage gems. RubyGems integrates with Ruby run-time loader to help find and load installed gems from standardized library folders. Though it is possible to use a private RubyGems repository, the public repository [rubygems.org](https://rubygems.org/) is most commonly used for gem management.
 
 The public repository helps users find gems, resolve dependencies and install them.
 
