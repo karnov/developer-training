@@ -142,7 +142,7 @@ You can iterate over an array with a for loop, but it's far easier to use
 => [1,2,3,4,5,6]
 
 [1,2,3] - [2,3,4]
-=> [1,4]
+=> [1]
 
 [1,2,3] & [2,3,4]
 => [2,3]
