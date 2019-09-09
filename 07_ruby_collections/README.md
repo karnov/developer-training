@@ -2,7 +2,8 @@
 
 ## Arrays
 
-### Creation
+Creating arrays in Ruby is as easy as typing a pair of square braces.
+
 
 ```ruby
 numbers = [1, 0, 7] # or Array.new([1,0,7])
@@ -14,7 +15,7 @@ numbers.size
 => 3
 ```
 
-Arrays do not need to consist of the same data type.
+Notice, how arrays do not need to consist of the same data type.
 
 ```ruby
 data = ["bob", 3, 0.931, true]
@@ -29,7 +30,9 @@ As for Strings, Ruby provides some other syntax shortcuts through [%notation](ht
 
 ### Array indices
 
-Most languages will throw an exception if you attempt to access an array index that does not yet exist. If you attempt to read a non-existent index, Ruby returns nil.
+As you have seen, ruby arrays are indexed from zero.
+
+But be aware, that while most languages will throw an exception if you attempt to access an array index that does not yet exist. If you attempt to read a non-existent index, Ruby returns nil.
 
 ```ruby
 letters = ['a', 'b', 'c']
@@ -118,6 +121,18 @@ list
 
 [1,2,3] << [4,5,6]
 => [1,2,3,[4,5,6]]
+```
+
+### Iterating over elements in an array
+
+You can iterate over an array with a for loop, but it's far easier to use
+`#each`
+
+```ruby
+[1,2,3].each { |num| print "#{num}! " }
+
+1! 2! 3! => [1,2,3]
+
 ```
 
 ### Combining arrays
@@ -262,3 +277,23 @@ colors.keys
 ```
 
 Experiment yourself with `.values` too
+
+### Iteration
+
+You can iterate over key value pairs in your hash
+
+```ruby
+colors = {
+  red:  0xff0000,
+  blue: 0x0000ff
+}
+
+colors.each do |name, hex_value|
+  puts "#{hex_value} will give you #{name}"
+end
+
+16711680 will give you red
+255 will give you blue
+=> {:red=>16711680, :blue=>255}
+
+```

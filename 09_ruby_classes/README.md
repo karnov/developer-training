@@ -55,9 +55,9 @@ account.public_methods
  ...
  ```
 
-But the drawback is, that all attributes and methods are `public`, i.e. read/write accessible. 
+But the drawback is, that all attributes and methods are `public`, i.e. read/write accessible.
 
-Do we really want write access to `@balance` and should we be able to read `@personal_identity_number` from outside. 
+Do we really want write access to `@balance` and should we be able to read `@personal_identity_number` from outside.
 
 ```ruby
 account.balance = 1_000_000_000
@@ -75,8 +75,8 @@ All these "requirements make the `BankAccount` type a good candidate for a `clas
 ```ruby
 class Person
   def initialize(
-      personal_identity_number: personal_identity_number, 
-      firstname: firstname, 
+      personal_identity_number: personal_identity_number,
+      firstname: firstname,
       lastname: lastname)
     @personal_identity_number = personal_identity_number
     @firstname = firstname
@@ -127,7 +127,7 @@ end
 But for methods which only accesses (read or write) an instance variable, within the object, Ruby (of course) has a shorthand for that
 
 ```ruby
-attr_reader :read_only_instancevariable, ... 
+attr_reader :read_only_instancevariable, ...
 attr_writer :write_only_instance_variable, ...
 attr_accessor :read_and_write....
 ```
@@ -137,7 +137,7 @@ Hence our `BankAccount` class will become
 ```ruby
 class BankAccount
   attr_reader :balance, :owner
-  
+
   def initialize(owner:)
     @owner = owner
     @balance = 0
@@ -153,7 +153,7 @@ class BankAccount
 end
 ```
 
-We introduces a method `full_name` in the `Person` class, that puts the `@firstname` and `@lastname` together. 
+We introduces a method `full_name` in the `Person` class, that puts the `@firstname` and `@lastname` together.
 
 Note also, that when we make have `attr_reader :firstname, :lastname` in `Person`, the getter-methods `firstname` and `lastname` can be used instead of `@firstname` and `@lastname` in `full_name` outside as well as inside `Person`.
 
