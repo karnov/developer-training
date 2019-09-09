@@ -12,7 +12,7 @@
 9. [Classes](09_ruby_classes)
 10. [Modules](10_ruby_modules)
 11. [Inheritance](11_ruby_inheritance)
-12. [Enumerable methods](12_enumerable_methods)
+12. [Enumerable methods](12_ruby_enumerable_methods)
 13. [Gems](13_ruby_gems)
 14. [Bundler](14_ruby_bundler)
 16. [Rubocop and coding style](16_ruby_rubocop)
