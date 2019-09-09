@@ -55,7 +55,7 @@ In case you wan't to format numbers, dates etc. when printing it, you can use `S
 month_name = "June"
 avg = 25.543
 "The average temperature in %s was %0.1f C" % [month_name, avg]
-=> "The average temperature in June was 25.54"
+=> "The average temperature in June was 25.5 C"
 ```
 
 ## String encoding
@@ -71,7 +71,7 @@ beer.bytes
 
 latin_beer = "øl".encode("iso8859-1")
 latin_beer.encoding
-=> #<Encoding:ISO-8859-1>
+=> Encoding:ISO-8859-1
 latin_beer.bytes
 => [248, 108]
 ```
@@ -106,4 +106,3 @@ but be aware when using old ruby versions. E.g. when running the above in ruby 2
 ruby-2.2.10> "Göteborg".upcase
 => "GöTEBORG"
 ```
-
