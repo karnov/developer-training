@@ -14,7 +14,7 @@
 11. [Inheritance](11_ruby_inheritance)
 12. [Enumerable methods](12_enumerable_methods)
 13. [Gems](13_ruby_gems)
-14. [Bundler](14_ruby_bundler) # TODO
+14. [Bundler](14_ruby_bundler)
 16. [Rubocop and coding style](16_ruby_rubocop)
 17. [Unit testing](17_ruby_unit_testing)
 18. [Logging](18_ruby_logging) # TODO
