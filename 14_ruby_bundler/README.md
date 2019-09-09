@@ -111,91 +111,75 @@ When your co-developers check out your code, it will come with the exact version
 In other words, you don't have to guess which versions of the dependencies you should install. This relieves a large maintenance burden from application developers, because all machines always run the exact same dependencies, i.e. gems.
 
 ## Updating a dependency
+
 Of course, at some point, you might want to update the version of a particular dependency your application relies on. For instance, you might want to update `nokogiri` to `1.10.4` - the latest version.
 
-You may feel an eager to just delete the Gemfile.lock and rerun `bundle install`, but importantly, just because you're updating one dependency, it doesn't mean you want to re-resolve all of your dependencies and use the latest version of everything.
+Here we have to change the Gemfile because we limited `nokogiri` to be a version 1.6.x. Now we wan't the latest version, and it's time to remove the version restriction in Gemfile, and let it be up to Gemfile.lock, to keep track of the version of `nokogiri` going forward.
 
-In our example, you only have two dependencies, but even in this case, updating everything can cause complications.
+Thus Gemfile is now
 
-## Updating a Gem Without Modifying the Gemfile[](https://bundler.io/rationale.html#updating-a-gem-without-modyfying-the-gemfile)
+```ruby
+source 'https://rubygems.org'
 
-Sometimes, you want to update a dependency without modifying the Gemfile. For example, you might want to update to the latest version of `rack-cache`. Because you did not declare a specific version of `rack-cache` in the `Gemfile`, you might want to periodically get the latest version of `rack-cache`. To do this, you want to use the `bundle update` command:
+gem 'sinatra'
+gem 'nokogiri'
+```
 
-    $ bundle update rack-cache
+Rerunning bundle install, will not give us anything, since nokogiri is still locked at version `1.6.8` in Gemfile.lock.
 
+You may feel tempted to just delete the Gemfile.lock and rerun `bundle install`, but importantly, just because you're updating one dependency, it doesn't mean you want to re-resolve all of your dependencies and use the latest version of everything.
 
+Instead we wan't to update our dependencies one-by-one, in a controlled way. To update `nokogiri` only, you want to use the `bundle update` command:
 
-This command will update `rack-cache` and its dependencies to the latest version allowed by the `Gemfile` (in this case, the latest version available). It will not modify any other dependencies.
+```bash
+$ bundle update nokogiri
+```
 
-It will, however, update dependencies of other gems if necessary. For instance, if the latest version of `rack-cache` specifies a dependency on `rack >= 1.5.2`, bundler will update `rack` to `1.5.2` even though you have not asked bundler to update `rack`. If bundler needs to update a gem that another gem depends on, it will let you know after the update has completed.
+Now `nokogiri` and its dependencies will be updated to the latest version allowed by the `Gemfile` (in this case, the latest version available). It will not modify any other dependencies.
 
-If you want to update every gem in the Gemfile to the latest possible versions, run:
+## Bootstraping a ruby (gem) project with Bundler
 
-    $ bundle update
+If you need to build a new `gem` (with RSpec as testing framework), then use `bundle gem` for that
 
+```bash
+$ bundle gem --test=rspec mygem
+Creating gem 'mygem'...
+      create  mygem/Gemfile
+      create  mygem/lib/mygem.rb
+      create  mygem/lib/mygem/version.rb
+      create  mygem/mygem.gemspec
+      create  mygem/Rakefile
+      create  mygem/README.md
+      create  mygem/bin/console
+      create  mygem/bin/setup
+      create  mygem/.gitignore
+      create  mygem/.travis.yml
+      create  mygem/.rspec
+      create  mygem/spec/spec_helper.rb
+      create  mygem/spec/mygem_spec.rb
+Initializing git repo in /Users/u0157312/src/mygem
+Gem 'mygem' was successfully created. For more information on making a RubyGem visit https://bundler.io/guides/creating_gem.html
+```
 
+and that gives you
 
-This will resolve dependencies from scratch, ignoring the `Gemfile.lock`. If you do this, keep `git reset --hard` and your test suite in your back pocket. Resolving all dependencies from scratch can have surprising results, especially if a number of the third-party packages you depend on have released new versions since you last did a full update.
+```bash
+$ tree mygem
+mygem
+├── Gemfile
+├── README.md
+├── Rakefile
+├── bin
+│   ├── console
+│   └── setup
+├── lib
+│   ├── mygem
+│   │   └── version.rb
+│   └── mygem.rb
+├── mygem.gemspec
+└── spec
+    ├── mygem_spec.rb
+    └── spec_helper.rb
+```
 
-## Summary[](https://bundler.io/rationale.html#summary)
-
-## A Simple Bundler Workflow[](https://bundler.io/rationale.html#a-simple-bundler-workflow)
-
--   When you first create a Rails application, it already comes with a `Gemfile`. For another kind of application (such as Sinatra), run:
-
-        $ bundle init
-
-
-
-    The `bundle init` command creates a simple `Gemfile` which you can edit.
-
--   Next, add any gems that your application depends on. If you care which version of a particular gem that you need, be sure to include an appropriate version restriction:
-
-        source 'https://rubygems.org'
-
-        gem 'sinatra', '~1.3.6'
-        gem 'rack-cache'
-        gem 'rack-bug'
-
-
-
--   If you don't have the gems installed in your system yet, run:
-
-        $ bundle install
-
-
-
--   To update a gem's version requirements, first modify the Gemfile:
-
-        source 'https://rubygems.org'
-
-        gem 'sinatra', '~1.4.5'
-        gem 'rack-cache'
-        gem 'rack-bug'
-
-
-
-    and then run:
-
-        $ bundle install
-
-
-
--   If `bundle install` reports a conflict between your `Gemfile` and `Gemfile.lock`, run:
-
-        $ bundle update sinatra
-
-
-
-    This will update just the Sinatra gem, as well as any of its dependencies.
-
--   To update all of the gems in your `Gemfile` to the latest possible versions, run:
-
-        $ bundle update
-
-
-
--   Whenever your `Gemfile.lock` changes, always check it in to version control. It keeps a history of the exact versions of all third-party code that you used to successfully run your application.
--   When deploying your code to a staging or production server, first run your tests (or boot your local development server), make sure you have checked in your `Gemfile.lock` to version control. On the remote server, run:
-
-        $ bundle install --deployment
+If you remove the `.gemspec` file, it's actually a nice skeleton for a Ruby app.
