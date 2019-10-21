@@ -16,7 +16,7 @@ Your tests describe what your application should be doing.
 
 **It gives you a feedback loop**
 
-When you are doing test driven development ([TDD[(https://en.wikipedia.org/wiki/Test-driven_development)]) **you get a feedback loop** that tells you what to focus on next, useful if you get distracted easily.
+When you are doing test driven development ([TDD](https://en.wikipedia.org/wiki/Test-driven_development)) **you get a feedback loop** that tells you what to focus on next, useful if you get distracted easily.
 
 **It helps you make sure your code is producing the results you expect**
 
