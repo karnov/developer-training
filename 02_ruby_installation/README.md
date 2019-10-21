@@ -1,39 +1,32 @@
 # Ruby installation and versions management
 
-## Ruby and RVM
+## Ruby and rbenv
  
-OS X comes with Ruby built-in, but I highly recommend installing Ruby with [RVM](http://rvm.io). With RVM, you can specify the version of Ruby you want installed.
+OS X comes with Ruby built-in, but I highly recommend installing Ruby with [rbenv](https://github.com/rbenv/rbenv). With rbenv, you can specify the version of Ruby you want installed.
 
 
-### Installing RVM on a mac
+### Installing rbenv on a mac
 ```bash
-$ gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-
-§ \curl -sSL https://get.rvm.io | bash
+$ brew install rbenv
 ```
 
-List available rubies
+Then launch a new terminal, and ensure rbenv is picked up
+
+List available versions of ruby on your machine
 
 ```bash
-$ rvm list
-
-      jruby-9.2.6.0 [ x86_64 ]
-      ruby-2.4.2 [ x86_64 ]
-      ruby-2.5.1 [ x86_64 ]
-      ruby-2.5.3 [ x86_64 ]
-  =*  ruby-2.6.3 [ x86_64 ]
-
-  # => - current
-  # =* - current && default
-  #  * - default
+$ rbenv versions
+  system
+  2.5.3
+* 2.6.5 (set by ...something/.ruby-version)
 ```
 
 ### Install a given ruby
 
-Let's install ruby-2.4.2
+Let's install ruby version 2.4.2
 
 ```bash
-rvm install ruby-2.4.2
+$ rbenv install 2.4.2
 ```
 
 ### Pick the right ruby version in a project
@@ -41,19 +34,29 @@ rvm install ruby-2.4.2
 Create a file named `.ruby-version` to the root of your project folder
 
 ```bash 
-$ echo "ruby-2.4.2" > .ruby-version
+$ echo "2.4.2" > .ruby-version
 ```
 
-When you (re-)enter that folder RVM will choose the ruby 2.4.2 if installed or otherwise ask you to install it
+When you (re-)enter that folder rbenv will choose the ruby 2.4.2 if installed or otherwise ask you to install it
 
 ```bash
 $ cd .
-$ rvm current
-  ruby-2.4.2
+$ rbenv version
+2.4.2 (set by ...something/.ruby-version)
 ```
 
 ```bash
 $ ruby -v
   ruby 2.4.2 ...
 ```
+
+### Set your global ruby
+
+Install a recent version of ruby e.g. 2.6.5 and run
+
+```bash
+$ rbenv global 2.6.5
+```
+
+Now 2.6.5 will be used everywhere except in folders where a .ruby-version file defines otherwise.
 
