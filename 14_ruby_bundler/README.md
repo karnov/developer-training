@@ -88,7 +88,7 @@ For such a small `Gemfile`, we'd advise you to skip `Bundler.require` and just r
 For much larger `Gemfile`s, using `Bundler.require` allows you to skip repeating a large stack of requirements.
 
 
-# Checking your dependency list into version control
+## Checking your dependency list into version control
 
 After developing your application for a while, check in the application together with the `Gemfile` and `Gemfile.lock` snapshot. Now, your repository has a record of the exact versions of all of the gems that you used the last time you know for sure that the application worked.
 
@@ -135,9 +135,11 @@ $ bundle update nokogiri
 
 Now `nokogiri` and its dependencies will be updated to the latest version allowed by the `Gemfile` (in this case, the latest version available). It will not modify any other dependencies.
 
+Don't forget to check those changes to Gemfile and Gemfile.lock into version control.
+
 ## Bootstraping a ruby (gem) project with Bundler
 
-If you need to build a new `gem` (with RSpec as testing framework), then use `bundle gem` for that
+If you need to build a new `gem` or any Ruby project, then `bundle gem` will work as a good skeleton for that. Try bootstrap a gem named `mygem`
 
 ```bash
 $ bundle gem --test=rspec mygem
@@ -159,7 +161,7 @@ Initializing git repo in /Users/u0157312/src/mygem
 Gem 'mygem' was successfully created. For more information on making a RubyGem visit https://bundler.io/guides/creating_gem.html
 ```
 
-and that gives you
+You'll get
 
 ```bash
 $ tree mygem
@@ -180,4 +182,14 @@ mygem
     └── spec_helper.rb
 ```
 
-If you remove the `.gemspec` file, it's actually a nice skeleton for a Ruby app.
+Go ahead and add your code, tests and metadata. When done, run
+
+```bash
+$ gem build mygem.gemspec
+ Successfully built RubyGem
+  Name: mygem
+  Version: 0.1.0
+  File: mygem-0.1.0.gem
+````
+
+If it succeeded, you can go ahead and publish it on rubygems or our private gem server.

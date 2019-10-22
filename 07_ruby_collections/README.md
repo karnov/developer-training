@@ -21,7 +21,7 @@ Notice, how arrays do not need to consist of the same data type.
 data = ["bob", 3, 0.931, true]
 ```
 
-As for Strings, Ruby provides some other syntax shortcuts through [%notation](http://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#The_.25_Notation).
+As for Strings, Ruby provides some other syntax shortcuts through [%-notation](http://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#The_.25_Notation).
 
 ```ruby
 %w{A list of words}
@@ -174,7 +174,8 @@ but perhaps what you are looking for is a `Set` or `SortedSet`
 ```ruby
 require 'set'
 
-SortedSet.new([3,1,2,2])                                   => #<SortedSet: {1, 2, 3}>
+SortedSet.new([3,1,2,2])
+=> #<SortedSet: {1, 2, 3}>
 ```
 
 ## Hashes
