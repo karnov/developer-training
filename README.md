@@ -17,16 +17,8 @@
 14. [Bundler](14_ruby_bundler)
 16. [Rubocop and coding style](16_ruby_rubocop)
 17. [Unit testing](17_ruby_unit_testing)
-18. [Logging](18_ruby_logging) # TODO
-19. [XML](19_ruby_xml) # TODO
-20. [Web services with Sinatra](20_ruby_sinatra) # TODO
-
-etc.
+18. [XML](18_ruby_xml)
 
 ## Continous integration
 
-Github
-
 Pull requests (First 20 min of https://www.youtube.com/watch?v=qyz3jkOBbQY)
-
-##

@@ -1,6 +1,6 @@
 # Methods
 
-Ruby methods always returns something, mostly what is on the last line. 
+Ruby methods always returns something, mostly what is on the last line.
 
 ```ruby
 def add(number1, number2)
@@ -48,7 +48,7 @@ def say_hello(name)
 end
 ```
 
-In such case you can use a guard, i.e. return early if `name` isn't set 
+In such case you can use a guard, i.e. return early if `name` isn't set
 
 ```ruby
 def say_hello(name)
@@ -122,7 +122,7 @@ def obvious_total(subtotal:, tax:, discount:)
   subtotal + tax - discount
 end
 
-obvious_total(subtotal: 100, tax: 10, discount: 5) 
+obvious_total(subtotal: 100, tax: 10, discount: 5)
 => 105
 ```
 
@@ -184,7 +184,7 @@ def say_hello(name)
 end
 ```
 
-Oh - but `name?("Jakob")` will actually return `"MatchData "Jakob"` and `name?("12345")` will return `nil`. 
+Oh - but `name?("Jakob")` will actually return `"MatchData "Jakob"` and `name?("12345")` will return `nil`.
 
 But that's just fine, since `MatchData ...` and `nil` will evaluate to `true` and `false` respectively in the `if name?(name)` conditional.
 
@@ -234,7 +234,7 @@ A common structure you will see in other non-functional programming languages is
 ```ruby
 def artist(phrase_of_song)
   artist = nil
-  
+
   case phrase_of_song
   when /Dub-I-Dub-I-Dub-I-Dup-Bup-Bup/
     artist = "Me & My"
@@ -243,7 +243,7 @@ def artist(phrase_of_song)
   when /Smoooooke on the water/
     artist = "Deep Purple"
   end
-  
+
   artist
 end
 

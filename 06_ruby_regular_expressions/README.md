@@ -97,10 +97,10 @@ Hint:
 require 'date'
 
 date = Date.new(2019, 2, 27)
-puts date.month
+date.month
 => 2
 
 another_date = Date.strptime("1972-08-31", "%Y-%m-%d")
-puts another_date.day
+another_date.day
 => 31
 ```
