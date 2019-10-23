@@ -141,11 +141,65 @@ document.to_xml
 
 ## XSLT
 
-A even better approach for transforming XML is using XSLT. One main difference is, that DOM manipulation is done on the document itself, whereas XSLT is a **new** document
+A (IMO) far better approach for transforming XML is using XSLT. One main difference is,
+that DOM manipulation is done on the document itself, whereas XSLT is creating a **new** document
+based on the input.
 
-Simplified there's two kind of problems in XML transformation, one is where
+Simplified, there's two kind of problems in XML transformation:
+- one is where you change a small detail, but keep the format, e.g. like before, change the prices.
+- the other is where you return the document in another format (i.e. content model), e.g. when
+ rendering a Karnov law document into HTML, to be displayable on a browser.
 
-Say we want to display the  can apply a stylesheet
+### The identity transform
+
+Let's change the prices with a stylesheet. It's almost an identity transform, i.e. that every
+node and attribute will be copied. ...with one exception, the price.
+
+```ruby
+stylesheet = Nokogiri::XSLT <<~XML
+  <?xml version="1.0" encoding="UTF-8"?>
+  <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns="http://www.w3.org/1999/xhtml"
+    version="1.0">
+
+    <xsl:template match="/">
+      <html>
+        <body>
+          <xsl:apply-templates />
+        </body>
+      </html>
+    </xsl:template>
+
+    <xsl:template match="meal">
+      <div class="card">
+        <xsl:apply-templates />
+      </div>
+    </xsl:template>
+
+    <xsl:template match="meal/name">
+      <h1><xsl:apply-templates /></h1>
+    </xsl:template>
+
+    <xsl:template match="meal/price">
+      <p class="price"><xsl:apply-templates /></p>
+    </xsl:template>
+
+    <xsl:template match="meal/description">
+      <p><xsl:apply-templates /></p>
+    </xsl:template>
+
+    <xsl:template match="calories"/>
+  </xsl:stylesheet>
+XML
+
+stylesheet.apply_to(document)
+=>
+```
+
+### The "full" transform
+
+A good example is, when we wan't to render our menu XML in a browser.
+Then we need HTML, and we can use the following stylesheet to do that:
 
 ```ruby
 stylesheet = Nokogiri::XSLT <<~XML
