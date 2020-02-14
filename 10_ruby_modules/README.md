@@ -1,6 +1,6 @@
 # Modules
 
-Modules can be used to group functionality. Therefore one of it's usages are, to define namespaces in your code. 
+Modules can be used to group functionality. Therefore one of it's usages are, to define namespaces in your code.
 
 ## Why use namespaces?
 
@@ -21,7 +21,7 @@ Let's say that your code was used by your colleague in a big project and he was 
 => 60
 ```
 
-Oops, that wasn't expected. 
+Oops, that wasn't expected.
 
 What you did is, what is known as [*monkey patching*](https://ruby.programmingpedia.net/en/tutorial/6043/monkey-patching-in-ruby), you have overwritten the core `Integer` class in Ruby. That same thing could happen with any core or standard library class in Ruby.
 
@@ -30,6 +30,10 @@ If you really, really think you need another `Integer` class, then embedding it 
 ```ruby
 module BirtdayCalculator
   class Integer
+    def initialize(num)
+      @num = num
+    end
+
     def abs
       60
     end

@@ -74,10 +74,12 @@ All these "requirements make the `BankAccount` type a good candidate for a `clas
 
 ```ruby
 class Person
+  attr_reader :firstname, :lastname
+
   def initialize(
-      personal_identity_number: personal_identity_number,
-      firstname: firstname,
-      lastname: lastname)
+      personal_identity_number:,
+      firstname:,
+      lastname:)
     @personal_identity_number = personal_identity_number
     @firstname = firstname
     @lastname = lastname

@@ -8,6 +8,14 @@ I recommend [Atom](https://atom.io/) or the very similar [Visual Studio Code](ht
 
 Install an editor
 
+```bash
+$ brew cask install atom
+```
+
+```bash
+$ brew cask install visual-studio-code
+```
+
 Create a new folder for all your software projects, e.g. a folder called `src` in your users home folder
 
 ```bash
