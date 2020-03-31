@@ -1,3 +1,5 @@
+require 'date'
+
 class Person
   attr_reader :firstname, :lastname
 
@@ -11,17 +13,19 @@ class Person
     "#{firstname} #{lastname}"
   end
 
+  class NotADateError < StandardError; end
+
   def birthdate
-    Date.strptime(date_str, "%y%m%d")
+    Date.strptime(date_str)
   rescue ArgumentError
-    fail "Wrong date error"
+    raise NotADateError, "Wrong date in #{date_str}"
   end
 
   private
-  
+
   attr_reader :personal_identity_number
 
   def date_str
-    personal_identity_number[/\A(?<date>\d{8})-\d{6}\z/, :date]
+    personal_identity_number[/\A(?<date>\d{6})-\d{4}\z/, :date]
   end
 end

@@ -38,7 +38,7 @@ $ rubocop
 Alternatively you can pass `rubocop` a list of files and directories to check:
 
 ```bash
-$ rubocop app spec lib/something.rb    
+$ rubocop app spec lib/something.rb
 ```
 
 Create a file named `bad_style.rb` with the following
@@ -77,7 +77,7 @@ bad_style.rb:4:5: W: Layout/EndAlignment: end at 4, 4 is not aligned with if at 
     ^^^
 bad_style.rb:5:4: C: Layout/TrailingBlankLines: Final newline missing.
 end
-   
+
 
 1 file inspected, 6 offenses detected
 ```
@@ -104,7 +104,7 @@ def badName
     ^^^^^^^
 bad_style.rb:5:4: C: [Corrected] Layout/TrailingBlankLines: Final newline missing.
 end
-   
+
 
 1 file inspected, 4 offenses detected, 3 offenses corrected
 ```

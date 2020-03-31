@@ -273,7 +273,7 @@ or you can give your subject a name, like `calculator`,
 describe Factorial do
   subject(:calculator) { Factorial.new }
   it "finds the factorial of 5" do
-    expect(subject.factorial_of(5)).to eq(120)
+    expect(calculator.factorial_of(5)).to eq(120)
   end
 end
 ```
