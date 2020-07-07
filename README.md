@@ -18,6 +18,7 @@
 16. [Rubocop and coding style](16_ruby_rubocop)
 17. [Unit testing](17_ruby_unit_testing)
 18. [XML](18_ruby_xml)
+18. [Karnov XML](19_karnov_xml)
 
 ## Continous integration
 
